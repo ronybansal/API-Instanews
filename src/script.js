@@ -25,7 +25,6 @@ $('.headline').on('change', function() {
 // Makes story text (value.abstract)) into a url leading to the story page (value.url)
           $('.stories').append('<div class= "content-' + index + '"> <div class= "text"> <a href= "' + item.url + '"> ' + item.abstract + '</a> </div> </div>')
 // Links Image into Content div
-
            img = item.multimedia[4];
            $('.content-' + index).css("background-image", "url('" + img.url + "')");
 
@@ -34,30 +33,3 @@ $('.headline').on('change', function() {
       });
     });
 });
-
-// var nytData = data.results,
-//                 articleLink,
-//                 articleCaption,
-//                 articleImageUrl;
-//
-// // Append the stories if we found any
-// if (nytData.length !== 0) {
-//
-// // make sure we only get populate the grid with 12 stories with photos
-//
-// nytData = nytData
-
-//         nytItems += '<ul>';
-//
-//         $each(nytData, function(key, value) {
-//
-//           articleImageUrl = value.multimedia[4].url;
-//           articleCaption = value.abstract;
-//           articleLink = value.url;
-//
-//           nytItems +=
-//           nytItems +=
-//           nytItems +=
-//           nytItems +=
-//         });
-// }
