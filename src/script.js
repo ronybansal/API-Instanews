@@ -1,11 +1,15 @@
 $(function() {
 
-// Loads stories on the change of the headline
+// Loads gif and stories on the change of the headline
 $('.headline').on('change', function() {
+
+  $('.loading-gif').show();
   var selection = $('.headline').val();
 
-// Clears previous stories when switching headlines
-  $('.stories').empty();
+ $('.nytlogo').addClass('nytlogo-change');
+ $('.nytlogo').removeClass('nytlogo')
+ $('.normal').addClass('load')
+ $('.normal').removeClass('normal')
 
 // Gets the api for NYT
    $.ajax({
@@ -14,22 +18,34 @@ $('.headline').on('change', function() {
    })
    .done(function(data) {
 
+// Makes sure stories don't load multiple times
+    $('.stories').empty();
+
+// Show no results for Science
+    if (data.results.length === 0) {
+      $('.stories').append('<p class= "error"> Sorry, nothing found! Please try again. </p>')
+    } else {
+
 // Cuts off the api to only return 12 stories
      var nytData = data.results
       nytData = nytData.filter(function(item){
-          return item.multimedia.length > 0;
+          return item.multimedia.length;
       }).splice(0, 12);
-
 
       nytData.forEach(function(item, index) {
 // Makes story text (value.abstract)) into a url leading to the story page (value.url)
-          $('.stories').append('<div class= "content-' + index + '"> <div class= "text"> <a href= "' + item.url + '"> ' + item.abstract + '</a> </div> </div>')
+          $('.stories').append('<div class= "images content' + index + '"> <div class= "text"> <a href= "' + item.url + '"> ' + item.abstract + '</a> </div> </div>')
 // Links Image into Content div
            img = item.multimedia[4];
-           $('.content-' + index).css("background-image", "url('" + img.url + "')");
+           $('.content' + index).css("background-image", "url('" + img.url + "')");
 
 
         });
-      });
-    });
+
+// Hides the loading gif
+      };
+    }).always(function() {
+                    $('.loading-gif').hide();
+});
+});
 });

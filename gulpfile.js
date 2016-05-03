@@ -9,7 +9,7 @@ gulp.task('browser-sync', function() {
 
     browserSync.init({
         open: false,
-        proxy: '192.168.33.10/project02'
+        proxy: '192.168.33.10/nyt-instanews'
     });
 
     gulp.watch('./src/*.js', ['uglify']);

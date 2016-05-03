@@ -1,0 +1,42 @@
+/* Helper Classes */
+html {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+body {
+  max-height: 100%;
+  background-color: black;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.text {
+  font-family: "opensans";
+}
+
+footer {
+  color: #c2c2c2;
+}
+/* End of Helper Classes */
+
+// Mixins
+$tablet-width: 600px;
+$desktop-width: 1000px;
+
+/* Tablet Version */
+@mixin tablet {
+@media (min-width: $tablet-width) {
+  @content;
+  }
+}
+
+/* Desktop Version */
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}

@@ -1,0 +1,25 @@
+/* Stories */
+.stories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.images {
+  display: flex;
+  height: 400px;
+  width:100%;
+  background-position: center center;
+  background-size: cover;
+  align-items: flex-end;
+  flex: 1 0 300px;
+}
+
+.text {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
