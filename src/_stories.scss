@@ -1,17 +1,22 @@
 /* Stories */
+
+.error{
+  margin:0 auto;
+}
+
 .stories {
   display: flex;
   flex-wrap: wrap;
 }
 
 .images {
-  display: flex;
   height: 400px;
   width:100%;
   background-position: center center;
   background-size: cover;
+
+  display:flex;
   align-items: flex-end;
-  flex: 1 0 300px;
 }
 
 .text {
@@ -22,4 +27,12 @@
 a {
   color: white;
   text-decoration: none;
+
+  display:flex;
+  flex-flow: column wrap;
+  flex: 1 0 300px;
+  
+  @include desktop{
+    flex: 1 0 25%;
+  }
 }

@@ -103,18 +103,20 @@ select {
   font-size: 2rem; }
 
 /* Stories */
+.error {
+  margin: 0 auto; }
+
 .stories {
   display: flex;
   flex-wrap: wrap; }
 
 .images {
-  display: flex;
   height: 400px;
   width: 100%;
   background-position: center center;
   background-size: cover;
-  align-items: flex-end;
-  flex: 1 0 300px; }
+  display: flex;
+  align-items: flex-end; }
 
 .text {
   background: rgba(0, 0, 0, 0.6);
@@ -122,7 +124,13 @@ select {
 
 a {
   color: white;
-  text-decoration: none; }
+  text-decoration: none;
+  display: flex;
+  flex-flow: column wrap;
+  flex: 1 0 300px; }
+  @media (min-width: 1000px) {
+    a {
+      flex: 1 0 25%; } }
 
 /* Footer */
 footer {
