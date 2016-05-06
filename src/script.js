@@ -34,7 +34,7 @@ $('.headline').on('change', function() {
 
       nytData.forEach(function(item, index) {
 // Makes story text (value.abstract)) into a url leading to the story page (value.url)
-          $('.stories').append('<div class= "images content' + index + '"> <div class= "text"> <a href= "' + item.url + '"> ' + item.abstract + '</a> </div> </div>')
+          $('.stories').append('<a href= "' + item.url + '"><div class= "images content' + index + '"> <div class= "text"> ' + item.abstract + ' </div> </div> </a>')
 // Links Image into Content div
            img = item.multimedia[4];
            $('.content' + index).css("background-image", "url('" + img.url + "')");
