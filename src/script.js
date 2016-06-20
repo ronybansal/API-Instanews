@@ -6,8 +6,8 @@ $('.headline').on('change', function() {
   $('.loading-gif').show();
   var selection = $('.headline').val();
 
- $('.nytlogo').toggle('nytlogo-change');
- $('.normal').toggle('load');
+ $('.nytlogo').toggleClass('nytlogo-change');
+ $('.normal').toggleClass('load')
 
 // Gets the api for NYT
    $.ajax({
